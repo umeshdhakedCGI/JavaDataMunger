@@ -41,7 +41,7 @@ public class DataMungerTestTask1 {
 				, new String[]{"select","*","from","ipl.csv"}, dataMunger.getSplitStrings("select * from ipl.csv"));
 		
 		assertEquals("testGetSplitStrings(),Spliting Queries into tokens does not return correct values ",
-				new String[]{"select","city,winner,player_match","from","ipl.csv","where","season",">","2014","and","city","=","'bangalore'","order","by","city"}, 
+				new String[]{"select","city,winner,player_match","from","ipl.csv","where","season",">","2014","and","city","=","'Bangalore'","order","by","city"},
 				dataMunger.getSplitStrings("select city,winner,player_match from ipl.csv where season > 2014 and city = 'Bangalore' order by city"));
 		
 		assertEquals("testGetSplitStrings(),Spliting Queries into tokens does not return correct values", new String[]{"select","count(city),max(winner)","from","ipl.csv"}, dataMunger.getSplitStrings("select count(city),max(winner) from ipl.csv"));

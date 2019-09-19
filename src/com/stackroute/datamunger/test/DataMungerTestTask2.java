@@ -78,12 +78,12 @@ public class DataMungerTestTask2 {
 
 		assertEquals(
 				"testGetConditionsPartQuery() :Retrieval of conditions part failed. The conditions part contains starting from where keyword till the next keyword, which is either group by or order by clause. In case of absence of both group by and order by clause, it will contain till the end of the query string",
-				"season > 2014 and city ='bangalore'", dataMunger.getConditionsPartQuery(
+				"season > 2014 and city ='Bangalore'", dataMunger.getConditionsPartQuery(
 						"select city,winner,player_match from ipl.csv where season > 2014 and city ='Bangalore'"));
 
 		assertEquals(
 				"testGetConditionsPartQuery() :Retrieval of conditions part failed. The conditions part contains starting from where keyword till the next keyword, which is either group by or order by clause. In case of absence of both group by and order by clause, it will contain till the end of the query string",
-				"season > 2014 and city ='bangalore' or city ='delhi'", dataMunger.getConditionsPartQuery(
+				"season > 2014 and city ='Bangalore' or city ='Delhi'", dataMunger.getConditionsPartQuery(
 						"select city,winner,player_match from ipl.csv where season > 2014 and city ='Bangalore' or city ='Delhi'"));
 	}
 
@@ -112,12 +112,12 @@ public class DataMungerTestTask2 {
 
 		assertEquals(
 				"testGetConditions() :Retrieval of conditions failed. Check getConditions() method.The query can contain one or multiple conditions. In case of multiple conditions, the conditions will be separated by AND/OR keywords.",
-				new String[] { "season > 2014", "city ='bangalore'" }, dataMunger.getConditions(
+				new String[] { "season > 2014", "city ='Bangalore'" }, dataMunger.getConditions(
 						"select city,winner,player_match from ipl.csv where season > 2014 and city ='Bangalore'"));
 
 		assertEquals(
 				"testGetConditions() :Retrieval of conditions failed. Check getConditions() method.The query can contain one or multiple conditions. In case of multiple conditions, the conditions will be separated by AND/OR keywords.",
-				new String[] { "season > 2014", "city ='bangalore'", "city ='delhi'" }, dataMunger.getConditions(
+				new String[] { "season > 2014", "city ='Bangalore'", "city ='Delhi'" }, dataMunger.getConditions(
 						"select city,winner,player_match from ipl.csv where season > 2014 and city ='Bangalore' or city ='Delhi'"));
 
 		assertEquals(
